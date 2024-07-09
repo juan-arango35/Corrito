@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import styled from "styled-components";
 
 const Counter = () => {
     const [valorinput, setValorinput] = useState(0);
@@ -15,14 +16,31 @@ function decrementar(){
     setValorinput(valorinput -1 )
 }
   return <div>
-    <button onClick={incrementar}>+</button>
-    <input type="text" 
+    <Button onClick={decrementar}>-</Button>
+    <Input type="text" 
     value={valorinput}
     onChange={menejadorInput}
-    style={{width:'30px'}}
+   
     />
-    <button onClick={decrementar}>-</button>
+   
+    <Button onClick={incrementar}>+</Button>
   </div>;
 };
 
 export default Counter;
+
+const Input=styled.input`
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  text-align: center;
+  margin: 0 10px;
+`
+
+const Button=styled.button`
+  height: 35px;
+  width: 30px;
+  margin-bottom: 5px;
+`
+
+

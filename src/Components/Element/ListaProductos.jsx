@@ -16,4 +16,8 @@ export default ListaProductos
 const Container=styled.div`
 background: gray;
 width: 70%;
+display: flex;
+flex-direction: column;
+align-items: center;
+
 `
