@@ -2,7 +2,7 @@ import React from 'react'
 import TarjetaProducto from './TarjetaProducto';
 import styled from 'styled-components';
 
-const ListaProductos = ({productos}) => {
+const ListaProductos = ({productos,price, setPrice}) => {
   return (
     <Container>
         <h1>Lista de productos</h1>

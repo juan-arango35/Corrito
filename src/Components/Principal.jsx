@@ -14,16 +14,14 @@ const Principal = () => {
   }, []);
   return (
     <ContainerPrincipal>
-      <ListaProductos productos={productos} />
-   
+      <ListaProductos productos={productos} price={price} setPrice={setPrice} />
       <ListaPrecio />
     </ContainerPrincipal>
   );
 };
 
 const ContainerPrincipal = styled.div`
- display:flex;
- 
+  display: flex;
 `;
 
 export default Principal;
