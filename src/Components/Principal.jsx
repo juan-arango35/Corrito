@@ -1,20 +1,29 @@
-import React, { useEffect, useState } from 'react';
-import ListaProductos from './Element/ListaProductos';
+import React, { useEffect, useState } from "react";
+import ListaProductos from "./Element/ListaProductos";
+import ListaPrecio from "./Element/ListaPrecio";
+import styled from "styled-components";
 
 const Principal = () => {
-    const [productos, setProductos] = useState([]);
+  const [productos, setProductos] = useState([]);
+  const [price, setPrice] = useState("");
 
-    useEffect(() => {
-    fetch('/src/Components/data/products.json')
-    .then((response)=>response.json())
-    .then((data)=>setProductos(data))
-    }, [])
+  useEffect(() => {
+    fetch("/src/Components/data/products.json")
+      .then((response) => response.json())
+      .then((data) => setProductos(data));
+  }, []);
   return (
-    <div>
-        <ListaProductos  productos={productos}/>
-        
-    </div>
-  )
-}
+    <ContainerPrincipal>
+      <ListaProductos productos={productos} />
+   
+      <ListaPrecio />
+    </ContainerPrincipal>
+  );
+};
 
-export default Principal
+const ContainerPrincipal = styled.div`
+ display:flex;
+ 
+`;
+
+export default Principal;
